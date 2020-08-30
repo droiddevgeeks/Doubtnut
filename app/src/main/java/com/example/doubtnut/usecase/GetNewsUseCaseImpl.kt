@@ -6,13 +6,13 @@ import io.reactivex.Single
 import javax.inject.Inject
 
 interface GetNewsUseCase {
-    fun getNewsData(country: String, apiKey: String): Single<ArticleResponse>
+    fun getNewsData(country: String): Single<ArticleResponse>
 }
 
 class GetNewsUseCaseImpl @Inject constructor(private val newsRepository: NewsRepository) :
     GetNewsUseCase {
 
-    override fun getNewsData(country: String, apiKey: String): Single<ArticleResponse> =
-        newsRepository.getNewsData(country, apiKey)
+    override fun getNewsData(country: String): Single<ArticleResponse> =
+        newsRepository.getNewsData(country)
 
 }

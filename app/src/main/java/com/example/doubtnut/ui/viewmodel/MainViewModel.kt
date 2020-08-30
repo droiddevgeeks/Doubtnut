@@ -26,9 +26,8 @@ class MainViewModel @Inject constructor(private val useCase: GetNewsUseCase) :
 
     private val disposable by lazy { CompositeDisposable() }
 
-
-    fun fetchNewsData(country: String, apiKey: String) {
-        val issueDisposable = useCase.getNewsData(country, apiKey)
+    fun fetchNewsData(country: String) {
+        val issueDisposable = useCase.getNewsData(country)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { loadingState.value = true }

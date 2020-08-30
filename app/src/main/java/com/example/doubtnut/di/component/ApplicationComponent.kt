@@ -1,8 +1,10 @@
 package com.example.doubtnut.di.component
 
 import com.example.doubtnut.NewsApplication
+import com.example.doubtnut.background.WorkManagerBindingModule
 import com.example.doubtnut.di.module.ApiModule
 import com.example.doubtnut.di.module.ActivityBindingModule
+import com.example.doubtnut.di.module.AppDbModule
 import com.example.doubtnut.di.module.ViewModelModule
 import com.example.doubtnut.di.scope.AppScope
 import dagger.Component
@@ -15,10 +17,12 @@ import dagger.android.support.AndroidSupportInjectionModule
         AndroidSupportInjectionModule::class,
         ActivityBindingModule::class,
         ViewModelModule::class,
-        ApiModule::class]
+        ApiModule::class,
+        WorkManagerBindingModule::class,
+        AppDbModule::class]
 )
 interface ApplicationComponent : AndroidInjector<NewsApplication> {
 
     @Component.Factory
-    abstract class Builder: AndroidInjector.Factory<NewsApplication>
+    abstract class Builder : AndroidInjector.Factory<NewsApplication>
 }

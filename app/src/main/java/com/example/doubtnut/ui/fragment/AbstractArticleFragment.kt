@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.doubtnut.base.ApplicationConstants
 import com.example.doubtnut.base.BaseFragment
 import com.example.doubtnut.base.CustomViewModelFactory
 import com.example.doubtnut.common.EventObserver
@@ -23,7 +24,7 @@ abstract class AbstractArticleFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.fetchNewsData("us","3f4be01eab73409c91ab094dda6ab669")
+        viewModel.fetchNewsData(ApplicationConstants.COUNTRY)
     }
 
     override fun viewInitialization(view: View) {

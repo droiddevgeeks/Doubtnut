@@ -91,6 +91,11 @@ dependencies {
 
     implementation "androidx.work:work-runtime:$work"
 
+    //DB
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "com.facebook.stetho:stetho-okhttp3:$facebook_db_view"
+
     //testing
     testImplementation "android.arch.core:core-testing:1.1.1"
     testImplementation "com.jraska.livedata:testing-ktx:$jraska_version"
